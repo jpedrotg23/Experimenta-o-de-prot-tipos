@@ -1,0 +1,149 @@
+[gd_scene load_steps=17 format=3 uid="uid://bck7mh4eggiqi"]
+
+[ext_resource type="Texture2D" uid="uid://sjj3f0x0q6eu" path="res://Material freeway/carros/coches (1).png" id="1_dspu0"]
+[ext_resource type="Script" path="res://carros.gd" id="1_rq8ba"]
+[ext_resource type="Texture2D" uid="uid://c2dagrii45ln4" path="res://Material freeway/carros/coches (2).png" id="2_5g1o2"]
+[ext_resource type="Texture2D" uid="uid://n41u33vxvmvn" path="res://Material freeway/carros/coches (3).png" id="3_wwank"]
+[ext_resource type="Texture2D" uid="uid://cg0dc4xpxvuik" path="res://Material freeway/carros/coches (4).png" id="4_sge0d"]
+[ext_resource type="Texture2D" uid="uid://cyng6mc6kcf8u" path="res://Material freeway/carros/coches (5).png" id="5_klvj0"]
+[ext_resource type="Texture2D" uid="uid://d2bg1xxflsyxp" path="res://Material freeway/carros/coches (6).png" id="6_tfg6l"]
+[ext_resource type="Texture2D" uid="uid://efca1i2gjg1p" path="res://Material freeway/carros/coches (8).png" id="7_q7klv"]
+[ext_resource type="Texture2D" uid="uid://h88fmge773t7" path="res://Material freeway/carros/coches (9).png" id="8_0qw4x"]
+[ext_resource type="Texture2D" uid="uid://bkdio0b0fivm8" path="res://Material freeway/carros/coches (10).png" id="9_x3jdn"]
+[ext_resource type="Texture2D" uid="uid://1g61k1hm64hv" path="res://Material freeway/carros/coches (11).png" id="10_xh82p"]
+[ext_resource type="Texture2D" uid="uid://bc4b7j5u01po3" path="res://Material freeway/carros/coches (12).png" id="11_b8p4u"]
+[ext_resource type="Texture2D" uid="uid://dtduuimudi6ng" path="res://Material freeway/carros/coches (13).png" id="12_a5ipl"]
+[ext_resource type="Texture2D" uid="uid://dhp1twp0lk55u" path="res://Material freeway/carros/coches (14).png" id="13_qtypg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o3btk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dspu0")
+}],
+"loop": true,
+"name": &"carro01",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5g1o2")
+}],
+"loop": true,
+"name": &"carro02",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wwank")
+}],
+"loop": true,
+"name": &"carro03",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_sge0d")
+}],
+"loop": true,
+"name": &"carro04",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_klvj0")
+}],
+"loop": true,
+"name": &"carro05",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_tfg6l")
+}],
+"loop": true,
+"name": &"carro06",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_0qw4x")
+}],
+"loop": true,
+"name": &"carro07",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_q7klv")
+}],
+"loop": true,
+"name": &"carro08",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_0qw4x")
+}],
+"loop": true,
+"name": &"carro09",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_x3jdn")
+}],
+"loop": true,
+"name": &"carro10",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_xh82p")
+}],
+"loop": true,
+"name": &"carro11",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_b8p4u")
+}],
+"loop": true,
+"name": &"carro12",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_a5ipl")
+}],
+"loop": true,
+"name": &"carro13",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_qtypg")
+}],
+"loop": true,
+"name": &"carro14",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0oaw"]
+size = Vector2(50, 34)
+
+[node name="Carros" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_rq8ba")
+
+[node name="Animacao" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_o3btk")
+animation = &"carro06"
+
+[node name="Colisao" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_j0oaw")
+
+[node name="Notificador" type="VisibleOnScreenNotifier2D" parent="."]

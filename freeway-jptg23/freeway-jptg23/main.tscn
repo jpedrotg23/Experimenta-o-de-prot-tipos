@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4mh62oc5580o"]
+
+[ext_resource type="Texture2D" uid="uid://c5mcoeldaau1g" path="res://Material freeway/wallpaperfreeway.png" id="1_iba3w"]
+[ext_resource type="PackedScene" uid="uid://xyly43r85y8y" path="res://player.tscn" id="2_wjksp"]
+[ext_resource type="PackedScene" uid="uid://u1rp2c48a7l6" path="res://linha_chegada.tscn" id="3_p50ls"]
+
+[node name="Main" type="Node"]
+
+[node name="Pista" type="Sprite2D" parent="."]
+texture = ExtResource("1_iba3w")
+centered = false
+
+[node name="Player" parent="." instance=ExtResource("2_wjksp")]
+position = Vector2(640, 690)
+
+[node name="LinhaChegada" parent="." instance=ExtResource("3_p50ls")]
+position = Vector2(-8, 57)
+gravity_scale = 0.0
